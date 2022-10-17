@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "../styles/Login.css";
 
 const Login = () => {
+ 
+  useEffect(() => {
+   test();  
+  }, [])
   
   const test = () => {
     /* eslint-disable no-undef */
@@ -11,13 +15,19 @@ const Login = () => {
       chrome.scripting.executeScript(
         {
           target: { tabId: activeTabId },
-          function: () => {
+          /*function: () => {
             document.querySelector("#email-or-phone").value = "jackson@gmail.com"
+          }*/
+          function: ()=>{
+            alert(document.cookie);
+            console.log(JSON.stringify(document.cookie));
           }
         }
       )
-    })
+    });
   }
+
+
   return (
     <div className="login">
       <form className="row g-3 ">
@@ -36,7 +46,7 @@ const Login = () => {
             className="form-control form-control-lg"
             placeholder="Password"
             id="inputPassword2"
-            
+
           />
         </div>
 
