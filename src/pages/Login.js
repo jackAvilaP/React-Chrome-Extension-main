@@ -7,7 +7,7 @@ const Login = () => {
   useEffect(() => {
    test();  
   }, [])
-  
+const [first, setfirst] = useState(second)
   const test = () => {
     /* eslint-disable no-undef */
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
@@ -19,7 +19,7 @@ const Login = () => {
             document.querySelector("#email-or-phone").value = "jackson@gmail.com"
           }*/
           function: ()=>{
-            alert(document.cookie);
+            //alert(document.cookie);
             console.log(JSON.stringify(document.cookie));
           }
         }
